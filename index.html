@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Vue.js Fundamentals</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <h1>Build Your First Vue.js App</h1>
+    <div id="app">
+        {{ description }}
+        Countdown > {{ timer }}
+
+    <h1>Directive</h1>
+    <span @mouseover="this.onHoverTitle = 'reactive message'" 
+          @mouseleave="this.onHoverTitle = 'reactive title'"
+          v-bind:class="white">
+          Hover on me to see a {{ onHoverTitle }}.
+    </span>
+
+    <h1>Enable User Interaction with Vue.js</h1>
+    <p>{{ text }}</p>
+    <button class="button" @click="checkPalindrome">Check if Palindrome</button>
+
+    <h1>Enable User Input with Vue.js</h1>
+    <p>{{ inputText }}</p>
+    <textarea v-model="inputText"></textarea>
+
+
+    <h1>Hide or Show with Conditionals</h1>
+    <span v-show="visible">Visible content.</span>
+
+    <h1>Build a List with Vue.js</h1>
+    <ol>
+        <li v-for="game in games">{{ game.title }}</li>
+    </ol>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
