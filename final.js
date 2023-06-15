@@ -3,7 +3,7 @@ const final = Vue.createApp( {
     data() {
         return {
             searchInput: "",
-            dataColumns: ["Title", "Highlights Supported", "Fully Optimized", "Steam URL", "Publisher", "Genre"],
+            dataColumns: ["Title", "Highlights Supported", "Fully Optimized", "Steam Url", "Publisher", "Genre"],
             dataset: [
                 {
                  "ID": 100031911,
