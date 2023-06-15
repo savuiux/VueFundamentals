@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>To Do List</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="toDo">
+        <h1>To Do List</h1>
+        <form v-on:submit.prevent="addNewTask">
+            <label for="todo-input">Add a new task</label>
+            <input
+                id="todo-input"
+                placeholder="Task"
+                v-model="task">
+            <button type="submit">Submit</button>
+        </form>
+
+        <h1>Final List</h1>
+        <ol>
+            <todo-item v-for="(todo, key) in tasks"
+                       :key="todo.id"
+                       :title="todo.title"
+                       @remove="tasks.splice(key, 1)">
+            </todo-item>
+        </ol>
+    </div>
+    
+    <script src="todo.js"></script>
+    <script src="./components/ToDoComponent.js"></script>
+    <script>const mountedToDo = toDo.mount("#toDo")</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>To Do List</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="final">
+        <h1>Final Project</h1>
+        <div id="game-database">
+            <form id="search">
+                <label for="search">Search: <input type="text" id="search" v-model="searchInput" /></label>
+            </form>
+            <br />
+            <game-detail
+                :entries="dataset"
+                :columns="dataColumns"
+                :filter-key="searchInput"
+            ></game-detail>
+        </div>
+    </div>
+    
+    <script src="final.js"></script>
+    <script src="./components/FinalComponent.js"></script>
+    <script>const mountedFinal = final.mount("#final")</script>
+</body>
+</html>

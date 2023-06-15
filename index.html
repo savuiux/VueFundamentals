@@ -97,6 +97,46 @@
     <br /><br />
     Recommendable: {{ tutorial_review }}
 
+    <h1>Build a Component</h1>
+    <first-component></first-component><br /><br />
+    <first-component></first-component>
+
+    <body-component title="Using Component Props"></body-component>
+    <body-component title="Built my First Component with Prop"></body-component>
+
+    <h1>Emitting Events</h1>
+    <header-component v-for="(header, index) in headers" 
+                      :key="header.id"
+                      :title="header.title"
+                      :style="{ fontSize: header.headerFontSize + 'px'}"
+                      @increase-text-size="increaseTextSize(index)">
+    </header-component>
+
+    <h1>Building Slots</h1>
+    <slot-component>
+        <p>Extra text from HTML.</p>
+    </slot-component>
+
+    <h1>Dynamic Components</h1>
+    <button class="button"
+            v-for="page in tabs"
+            v-bind:key="page"
+            v-bind:class="{active:currentTab === page}"
+            @click="currentTab=page">{{ page }}
+    </button>
+    <br /><br />
+    <component v-bind:is="currentTabComponent"></component>
+
+    <h1>Binding Components</h1>
+    <button class="button white"
+            v-for="menu in menus"
+            v-bind:key="menu"
+            v-bind:class="{active:currentMenu === menu}"
+            @click="currentMenu=menu">{{ menu.title }}
+    </button>
+    <br /><br />
+    <component v-bind:is="currentMenuComponent"></component>
+
     </div>
 
     <script src="main.js"></script>

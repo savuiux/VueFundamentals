@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Landing Page</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="landing">
+        <h1>Web Development Front-End Frameworks</h1>
+        <div class="cards">
+            <card-component  v-for="(card, index) in cards"
+                            :key="index"
+                            :title="card.title"
+                            :description="card.description"
+                            :link="card.link">
+            </card-component>
+        </div>
+        <h1>Directives</h1>
+        <input style="padding: 1rem 2rem; min-width: 50vh;" type="text"  />
+
+        <h1>Directives with Arguments</h1>
+        <span v-arguments:ArgumentExample.one.two="message"></span>
+
+        <h1>Directives with <u>Dynamic</u> Arguments</h1>
+        <p class="announcement" v-stick-element:[location]="0">This is an announcement for you.</p>
+
+        <h1>Directives with <u>Dynamic</u> Bindings</h1>
+        <p>Move the slider to move the footer</p>
+        <input type="range" min="0" max="100" v-model="locationPosition" /> {{ locationPosition }}
+
+        <p class="footer" v-reposition-element:[locationFooter]="locationPosition">This is a footer for everyone.</p>
+    </div>
+    
+    <script src="landing.js"></script>
+    <script src="./components/CardComponent.js"></script>
+    <script>const mountedLanding = landing.mount("#landing")</script>
+</body>
+</html>

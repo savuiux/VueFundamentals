@@ -2,6 +2,7 @@
 	--accent: #40c98d;
 	--background: #27394a;
 	--white: #FFFFFF;
+	--black: #000000;
 	--fontSize: 14px;
 }
 
@@ -14,9 +15,9 @@ body
 }
 
 textarea,
-input:not(type="checkbox") {
+input:not([type=radio]):not([type=checkbox]) {
 	padding: 1rem 2rem;
-	min-width: 50vh;
+	min-width: 20vh;
 }
 
 select  {
@@ -26,6 +27,10 @@ select  {
 
 p {
 	white-space: pre-line;
+}
+
+a:visited {
+	color: var(--white);
 }
 
 .white {
@@ -41,6 +46,7 @@ p {
 	padding: 1rem 2rem;
 	border: none;
 	font-size: var(--fontSize);
+	text-decoration: none;
 }
 
 .block {
@@ -49,4 +55,101 @@ p {
 
 .margin-left-15 {
 	margin-left: 15px;
+}
+
+.announcement,
+.footer {
+	left: 0;
+	background: var(--black);
+    width: 100%;
+    margin: 0;
+    padding: 1rem 0.5rem;
+    text-align: center;
+}
+
+.cards {
+	display: grid;
+    gap: 10em;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.card {
+	background: var(--white);
+    padding: 5rem;
+	border-radius: 25px;
+}
+
+.yes,
+.no {
+	position: relative;
+}
+
+.yes span,
+.no span {
+	position: relative;
+	display: none;
+}
+
+.yes:before {
+	content: '\f00c';
+	position: absolute;
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	font-family: 'FontAwesome'
+}
+
+.no:before {
+	content: '\f00d';
+    color: red;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'FontAwesome';
+}
+
+.table-columns {
+	padding: 1rem;
+	font-size: 20px;
+	font-weight: bold;
+	background-color: var(--black);
+	cursor: pointer
+}
+
+.table-columns.active {
+	background-color: var(--accent);
+    color: var(--white);
+}
+
+.game-data {
+	padding: 15px 10px;
+    vertical-align: middle;
+    background-color: rgba(0,0,0,.5);
+}
+
+.arrow {
+	position: relative;
+	padding-right: 2rem;
+	padding-left: 1rem;
+}
+
+.arrow.asc:after {
+	content: '\f077';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'FontAwesome';
+	font-size: 12px;
+}
+
+.arrow.desc:after {
+	content: '\f078';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'FontAwesome';
+	font-size: 12px;
 }
