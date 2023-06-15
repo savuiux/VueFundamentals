@@ -37,8 +37,69 @@
     <ol>
         <li v-for="game in games">{{ game.title }}</li>
     </ol>
+
+    <h1>Data Properties</h1>
+    <p>{{ initial }}</p>
+
+    <h1>Methods</h1>
+    <p>{{ startString }}</p>
+    <button class="button" @click="addToStart">Add to String</button>
+
+    <h1>Loop Through a Range</h1>
+    <span v-for="number in 20">{{ number }} &nbsp;</span>
+
+    <h1>Loop Through an Array</h1>
+    <ul>
+        <li v-for="item in items">{{ item }}</li>
+    </ul>
+
+    <h1>Looping with an Index</h1>
+    <ul>
+       <li v-for="(framework, key) in frameworks">{{ key }} - {{ framework.content }}</li> 
+    </ul>
+
+    <h1>Looping through Objects</h1>
+    <ol>
+        <li v-for="music in musics">{{ music }}</li>
+    </ol>
+
+    <h1>Looping through Objects and Keys</h1>
+    <ol>
+        <li v-for="(music, property) in musics"><span class="capitalize">{{ property }}</span> - {{ music }}</li>
+    </ol>
+
+    <h1>Looping through Objects, Keys, and Indexes</h1>
+    <ul>
+        <li v-for="(baby, property, index) in babies">{{ index }} - <span class="capitalize">{{ property }}</span> - {{ baby }}</li>
+    </ul>
+
+    <h1>Build an Input Field</h1>
+    <label for="fullName">Full Name</label>
+    <input id="fullName" v-model="fullName" class="margin-left-15" placeholder="Makima San" />
+    <p>Your Full Name is {{ fullName }}.</p>
+
+    <h1>Dropdown Menus</h1>
+    <select v-model="selected" v-bind:selected="selected">
+        <option v-for="rate in rating" v-bind:value="rate.value">{{ rate.title }}</option>
+    </select>
+    <p>{{ selected }}</p>
+
+    <h1>Checkbox</h1>
+    <label for="friends" class="block"><input type="checkbox" id="friends" value="Friends" v-model="recommended"> Friends</label>
+    <label for="acquaintance" class="block"><input type="checkbox" id="acquaintance" value="Acquaintances" v-model="recommended"> Acquaintances</label>
+
+    <p>Recommended for {{ recommended }}</p>
+
+    <h1>Radio</h1>
+    <p>Would you recommend this tutorial?</p>
+    <label for="yes"><input type="radio" id="yes" value="Yes" v-model="tutorial_review"/>Yes</label>
+    <label for="no"><input type="radio" id="no" value="No" v-model="tutorial_review"/>No</label>
+    <br /><br />
+    Recommendable: {{ tutorial_review }}
+
     </div>
 
     <script src="main.js"></script>
+
 </body>
 </html>

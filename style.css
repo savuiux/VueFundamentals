@@ -13,8 +13,27 @@ body
 	padding: 3rem;
 }
 
+textarea,
+input:not(type="checkbox") {
+	padding: 1rem 2rem;
+	min-width: 50vh;
+}
+
+select  {
+	padding: .5rem 1rem;
+	min-width: 15vh;
+}
+
+p {
+	white-space: pre-line;
+}
+
 .white {
 	color: var(--white);
+}
+
+.capitalize {
+	text-transform: capitalize;
 }
 
 .button {
@@ -24,7 +43,10 @@ body
 	font-size: var(--fontSize);
 }
 
-textarea {
-	padding: 1rem 2rem;
-	min-width: 50vh;
+.block {
+	display: block;
+}
+
+.margin-left-15 {
+	margin-left: 15px;
 }
